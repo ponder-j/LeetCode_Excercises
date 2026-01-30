@@ -1,0 +1,375 @@
+[
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "longestConsecutive",
+        "kind": 2,
+        "importPath": "0x01_Hash.Ex128_最长连续序列",
+        "description": "0x01_Hash.Ex128_最长连续序列",
+        "peekOfCode": "def longestConsecutive(nums):\n    nums_set = list(set(nums))\n    n = len(nums_set)\n    longest = 0\n    hashdic = {}\n    for num in nums_set:\n        hashdic[num] = 1\n    for num in nums_set:\n        x = num\n        if x-1 not in hashdic:",
+        "detail": "0x01_Hash.Ex128_最长连续序列",
+        "documentation": {}
+    },
+    {
+        "label": "twoSum",
+        "kind": 2,
+        "importPath": "0x01_Hash.Ex1_两数之和",
+        "description": "0x01_Hash.Ex1_两数之和",
+        "peekOfCode": "def twoSum(nums, target):\n        for i in range(len(nums)):\n            for j in range(i+1, len(nums)):\n                if nums[i] + nums[j] == target:\n                    return [i, j]",
+        "detail": "0x01_Hash.Ex1_两数之和",
+        "documentation": {}
+    },
+    {
+        "label": "generate_key",
+        "kind": 2,
+        "importPath": "0x01_Hash.Ex49_字母异位词分组",
+        "description": "0x01_Hash.Ex49_字母异位词分组",
+        "peekOfCode": "def generate_key(word):\n    count = [0 for i in range(26)]\n    for letter in word:\n        count[ord(letter)-97] += 1\n    hashstr = \"\"\n    for i in range(26):\n        if count[i] != 0:\n            hashstr += chr(i+97) + str(count[i])\n    return hashstr\n# print(generate_key(\"tea\"))",
+        "detail": "0x01_Hash.Ex49_字母异位词分组",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "0x02_DualPointer.Ex11_盛水最多的容器",
+        "description": "0x02_DualPointer.Ex11_盛水最多的容器",
+        "peekOfCode": "class Solution:\n    def maxArea(self, height: List[int]) -> int:\n        left, right = 0, len(height)-1\n        max_vol = area(height, left, right)\n        while left < right:\n            if height[left] >= height[right]: # 若 左指针数 >= 右指针数，则短板为右指针数，假设右指针数仍有可能为右边界，则滑动左指针，由于滑动过程中间距在缩短而高度不可能增长（因为短板被卡死在右指针数），所以不可能得到比当前还大的容量，假设不成立，进而右边界可以进行更新\n                right -= 1\n            elif height[left] < height[right]: # 若 左指针数 < 右指针数，同理左边界可以进行更新\n                left += 1\n            max_vol = max(area(height, left, right), max_vol)",
+        "detail": "0x02_DualPointer.Ex11_盛水最多的容器",
+        "documentation": {}
+    },
+    {
+        "label": "area",
+        "kind": 2,
+        "importPath": "0x02_DualPointer.Ex11_盛水最多的容器",
+        "description": "0x02_DualPointer.Ex11_盛水最多的容器",
+        "peekOfCode": "def area(h, x, y):\n    return (y - x) * min(h[x], h[y])\n# Instantiation\nif __name__ == '__main__':\n    # 实例化 Solution 类\n    sol = Solution()\n    # 构造测试用例\n    testcase = [1,8,6,2,5,4,8,3,7] \n    # 调用方法并打印结果\n    result = sol.maxArea(testcase)",
+        "detail": "0x02_DualPointer.Ex11_盛水最多的容器",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "0x02_DualPointer.Ex15_三数之和",
+        "description": "0x02_DualPointer.Ex15_三数之和",
+        "peekOfCode": "class Solution:\n    def threeSum(self, nums: List[int]) -> List[List[int]]:\n        n = len(nums)\n        nums.sort()\n        ans = []\n        for i in range(n-2):\n            if i > 0 and nums[i] == nums[i-1]:\n                continue\n            left = i+1\n            right = n-1",
+        "detail": "0x02_DualPointer.Ex15_三数之和",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "0x02_DualPointer.Ex283_移动零",
+        "description": "0x02_DualPointer.Ex283_移动零",
+        "peekOfCode": "class Solution:\n    def moveZeroes(self, nums: List[int]) -> None:\n        start = 0\n        for i in range(len(nums)-1):\n            if nums[i] != 0:\n                start = i + 1\n                continue\n            if nums[i+1] != 0:\n                nums[start], nums[i+1] = nums[i+1], nums[start]\n                start += 1",
+        "detail": "0x02_DualPointer.Ex283_移动零",
+        "documentation": {}
+    },
+    {
+        "label": "moveZeroes",
+        "kind": 2,
+        "importPath": "0x02_DualPointer.Ex283_移动零",
+        "description": "0x02_DualPointer.Ex283_移动零",
+        "peekOfCode": "def moveZeroes(nums):\n    zerop = 0\n    for nzerop in range(len(nums)):\n        if nums[nzerop] != 0:\n            nums[zerop], nums[nzerop] = nums[nzerop], nums[zerop]\n            zerop += 1\n    print(nums)\nmoveZeroes([0,1,0,3,0,12])",
+        "detail": "0x02_DualPointer.Ex283_移动零",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "0x02_DualPointer.Ex42_接雨水",
+        "description": "0x02_DualPointer.Ex42_接雨水",
+        "peekOfCode": "class Solution:\n    def trap(self, height: List[int]) -> int:\n        n = len(height)\n        l_max = [0]\n        r_max = [0]\n        temp_maxl = height[0]\n        temp_maxr = height[n-1]\n        for i in range(1, n):\n            if temp_maxl < height[i-1]:\n                temp_maxl = height[i-1]",
+        "detail": "0x02_DualPointer.Ex42_接雨水",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "0x02_DualPointer.Ex42_接雨水_法2",
+        "description": "0x02_DualPointer.Ex42_接雨水_法2",
+        "peekOfCode": "class Solution:\n    def trap(self, height: List[int]) -> int:\n        n = len(height)\n        l = 0\n        r = n-1\n        temp_maxl = height[0]\n        temp_maxr = height[n-1]\n        vol = 0\n        while l < r:\n            if height[l] < height[r]:",
+        "detail": "0x02_DualPointer.Ex42_接雨水_法2",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "0x02_DualPointer.Ex42_接雨水_法3",
+        "description": "0x02_DualPointer.Ex42_接雨水_法3",
+        "peekOfCode": "class Solution:\n    def trap(self, height: List[int]) -> int:\n        vol = 0\n        n = len(height)\n        stack = []\n        stack.append(0)\n        i = 1\n        while i < n:\n            if height[i] < height[stack[-1]]:\n                stack.append(i)",
+        "detail": "0x02_DualPointer.Ex42_接雨水_法3",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "0x03_SlidingWin.Ex3_无重复字符的最长子串",
+        "description": "0x03_SlidingWin.Ex3_无重复字符的最长子串",
+        "peekOfCode": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        return\n# 思路总结\n# Instantiation\nif __name__ == '__main__':\n    # 实例化 Solution 类\n    sol = Solution()\n    # 构造测试用例\n    testcase = \"abcabcbb\"",
+        "detail": "0x03_SlidingWin.Ex3_无重复字符的最长子串",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "template",
+        "description": "template",
+        "peekOfCode": "class Solution:\n    pass\n# 思路总结\n# Instantiation\nif __name__ == '__main__':\n    # 实例化 Solution 类\n    sol = Solution()\n    # 构造测试用例\n    testcase = []\n    # 调用方法并打印结果",
+        "detail": "template",
+        "documentation": {}
+    }
+]
