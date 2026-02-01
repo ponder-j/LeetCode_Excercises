@@ -352,11 +352,51 @@
         "documentation": {}
     },
     {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "PriorityQueue",
         "importPath": "queue",
         "description": "queue",
         "isExtraImport": true,
         "detail": "queue",
+        "documentation": {}
+    },
+    {
+        "label": "deque",
+        "importPath": "collections",
+        "description": "collections",
+        "isExtraImport": true,
+        "detail": "collections",
         "documentation": {}
     },
     {
@@ -492,6 +532,15 @@
         "description": "0x04_SubStr.Ex239_滑动窗口最大值",
         "peekOfCode": "class Solution:\n    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:\n        n = len(nums)\n        pq = PriorityQueue()\n        for i in range(k):\n            pq.put((-nums[i], i))\n        p = k\n        ans = []\n        ans.append(-pq.queue[0][0])\n        while p < n:",
         "detail": "0x04_SubStr.Ex239_滑动窗口最大值",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "0x04_SubStr.Ex239_滑动窗口最大值deque",
+        "description": "0x04_SubStr.Ex239_滑动窗口最大值deque",
+        "peekOfCode": "class Solution:\n    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:\n        ans = []\n        monoq = deque()\n        for i, num in enumerate(nums):\n            while monoq and nums[monoq[-1]] <= num:\n                monoq.pop()\n            monoq.append(i)\n            while monoq[0] <= i - k:\n                monoq.popleft()",
+        "detail": "0x04_SubStr.Ex239_滑动窗口最大值deque",
         "documentation": {}
     },
     {
