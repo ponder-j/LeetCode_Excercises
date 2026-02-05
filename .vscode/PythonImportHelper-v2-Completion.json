@@ -384,11 +384,92 @@
         "documentation": {}
     },
     {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Set",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "PriorityQueue",
         "importPath": "queue",
         "description": "queue",
         "isExtraImport": true,
         "detail": "queue",
+        "documentation": {}
+    },
+    {
+        "label": "collections",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "collections",
+        "description": "collections",
+        "detail": "collections",
         "documentation": {}
     },
     {
@@ -550,6 +631,33 @@
         "description": "0x04_SubStr.Ex560_和为 K 的子数组",
         "peekOfCode": "class Solution:\n    def subarraySum(self, nums: List[int], k: int) -> int:\n        pre = []\n        n = len(nums)\n        pre_dict = {}\n        pre_dict[0] = 1\n        cnt = 0\n        for i in range(n):\n            if i == 0:\n                prei = nums[i]",
         "detail": "0x04_SubStr.Ex560_和为 K 的子数组",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "0x04_SubStr.Ex76_最小覆盖子串",
+        "description": "0x04_SubStr.Ex76_最小覆盖子串",
+        "peekOfCode": "class Solution:\n    def minWindow(self, s: str, t: str) -> str:\n        n = len(s)\n        target_dict = {}\n        for c in t:\n            if c not in target_dict:\n                target_dict[c] = 1\n            else:\n                target_dict[c] += 1\n        cur_dict = dict.fromkeys(target_dict, 0)",
+        "detail": "0x04_SubStr.Ex76_最小覆盖子串",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "0x04_SubStr.Ex76_最小覆盖子串Optimized",
+        "description": "0x04_SubStr.Ex76_最小覆盖子串Optimized",
+        "peekOfCode": "class Solution:\n    def minWindow(self, s: str, t: str) -> str:\n        # 1. 处理边界条件\n        if not t or not s:\n            return \"\"\n        # 2. 统计 t 中需要的字符频率\n        target_counts = collections.Counter(t)\n        required_unique_chars = len(target_counts) # t 中有多少个独特的字符需要满足\n        # 3. 初始化滑动窗口的状态\n        l, r = 0, 0",
+        "detail": "0x04_SubStr.Ex76_最小覆盖子串Optimized",
+        "documentation": {}
+    },
+    {
+        "label": "Solution",
+        "kind": 6,
+        "importPath": "0x05_Arrays.Ex53_最大子数组和",
+        "description": "0x05_Arrays.Ex53_最大子数组和",
+        "peekOfCode": "class Solution:\n    def maxSubArray(self, nums: List[int]) -> int:\n        n = len(nums)\n        max = nums[0]\n        for i in range(n):\n# 思路总结\n# Instantiation\nif __name__ == '__main__':\n    # 实例化 Solution 类\n    sol = Solution()",
+        "detail": "0x05_Arrays.Ex53_最大子数组和",
         "documentation": {}
     },
     {
