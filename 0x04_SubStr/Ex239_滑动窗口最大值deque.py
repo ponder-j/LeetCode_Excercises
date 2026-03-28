@@ -3,20 +3,25 @@ from collections import deque
 
 # Main Logic
 class Solution:
+    # 所谓滑动窗口实际上维护的是从开始到右游标的单调队列
+    # 从开始到左游标的数由另外的逻辑剔除
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         ans = []
-        monoq = deque()
+        monoq = deque() # 维护一个单调递减的队列
         for i, num in enumerate(nums):
+            # 队列中末端元素比后来者小，就可以滚蛋了
+            print(monoq)
             while monoq and nums[monoq[-1]] <= num:
                 monoq.pop()
-            monoq.append(i)
-            while monoq[0] <= i - k:
+                print(monoq)
+            monoq.append(i) # 加入的是下标，加入值没有意义
+            print(monoq)
+            while monoq[0] <= i - k: # 判断下标是否超界，超界直接滚蛋
                 monoq.popleft()
-            
-            if i < k - 1:
+                print(monoq)
+            if i < k - 1: # 前 k - 1 个数还没有形成窗口，不用加入答案
                 continue
             ans.append(nums[monoq[0]])
-        
         return ans
             
             

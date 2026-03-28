@@ -7,19 +7,18 @@ class Solution:
         n = len(nums)
         pq = PriorityQueue()
         for i in range(k):
-            pq.put((-nums[i], i))
-        p = k
+            pq.put((-nums[i], i))   # pq.put((优先级，值))
+        p = k                       # p 为游标
         ans = []
-        ans.append(-pq.queue[0][0])
+        ans.append(-pq.queue[0][0]) # 加入前 k 个数的最大值
         while p < n:
             pq.put((-nums[p], p))
-            qmax = pq.queue[0]
-            while qmax[1] <= p - k:
-                pq.get()
-                qmax = pq.queue[0]
+            qmax = pq.queue[0]      # pq 自动按优先级维护最小值
+            while qmax[1] <= p - k: # 判断下标是否超界
+                pq.get()            # 超界直接取出
+                qmax = pq.queue[0]  # 取下一个
             ans.append(-pq.queue[0][0])
             p += 1
-        
         return ans
             
             
