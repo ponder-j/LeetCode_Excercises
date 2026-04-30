@@ -12,11 +12,13 @@ class ListNode:
             print(p.val)
             p = p.next
 
-class Solution:
+class Solution_rubbish:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         p1, p2 = list1, list2
-        if (p1 is None) or (p2 is None):
-            return None
+        if (p1 is None):
+            return p2
+        elif (p2 is None):
+            return p1
         if p1.val <= p2.val:
             head = ListNode(p1.val)
             p1 = p1.next
@@ -43,6 +45,22 @@ class Solution:
                 p2, pre = p2.next, pre.next
         
         return head
+
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        # 直接递归
+        if list1 is None:
+            return list2
+        elif list2 is None:
+            return list1
+        
+        if list1.val <= list2.val:
+            list1.next = self.mergeTwoLists(list1.next, list2)
+            return list1
+        
+        else:
+            list2.next = self.mergeTwoLists(list2.next, list1)
+            return list2
 
 # 思路总结
 
