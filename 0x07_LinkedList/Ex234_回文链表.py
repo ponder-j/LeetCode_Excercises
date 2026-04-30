@@ -6,7 +6,7 @@ class ListNode:
         self.val = val
         self.next = next
 
-class Solution:
+class Solution_rubbish:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
         p = head
         record = []
@@ -14,6 +14,21 @@ class Solution:
             record.append(p.val)
             p = p.next
         return record == record[::-1]
+
+class Solution:
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        self.front_p = head
+
+        def recursively_cmp(p: Optional[ListNode]) -> bool:
+            if p is not None:
+                if not recursively_cmp(p.next):
+                    return False
+                if self.front_p.val != p.val:
+                    return False
+                self.front_p = self.front_p.next
+            return True
+        
+        return recursively_cmp(head)
 
 # 思路总结
 
