@@ -27,6 +27,35 @@ def printLinkedlist(a: Optional[ListNode]):
 
 class Solution:
     def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+        if k == 1:
+            return head
+        # newhead 在第 k 个位置
+        newhead = head
+        for _ in range(k-1):
+            if newhead is None:
+                return head
+            if newhead.next is None:
+                return head
+            newhead = newhead.next
+
+        # newend 为原来的 head
+        # newend 接入下面已经 reverseKGroup 过的剩余链表
+        newend = head
+        # newend.next = self.reverseKGroup(newhead.next, k)
+
+        # 接下来翻转当前 K 个元素的链表
+        pre = head
+        p = head.next
+
+        newend.next = self.reverseKGroup(newhead.next, k)
+        
+        for _ in range(k-1):
+            ne = p.next
+            p.next = pre
+            pre = p
+            p = ne
+
+        return newhead
 
 # 思路总结
 
