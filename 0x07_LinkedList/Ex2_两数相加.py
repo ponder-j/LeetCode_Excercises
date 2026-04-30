@@ -23,6 +23,7 @@ def printLinkedlist(a: Optional[ListNode]):
     while a is not None:
         print(a.val, end=" -> ")
         a = a.next
+    print()
 
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
@@ -49,7 +50,7 @@ class Solution:
             p = p.next
             l1, l2 = l1.next, l2.next
         
-        if l1.next is not None:
+        while l1.next is not None:
             sum = l1.next.val + take
             take = 0
             if sum >= 10:
@@ -57,7 +58,7 @@ class Solution:
                 sum -= 10
             p.next = ListNode(sum)
             p, l1 = p.next, l1.next
-        elif l2.next is not None:
+        while l2.next is not None:
             sum = l2.next.val + take
             take = 0
             if sum >= 10:
@@ -86,4 +87,6 @@ if __name__ == '__main__':
     # 调用方法并打印结果
     result = sol.addTwoNumbers(l1, l2)
     # print(f"输出结果: {result}")
+    printLinkedlist(l1)
+    printLinkedlist(l2)
     printLinkedlist(result)
