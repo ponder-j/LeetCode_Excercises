@@ -21,8 +21,11 @@ def combin(a: str) -> None:
             return
         
         for letter in dic_n2l[a[step]]:
+            sentence += letter
+            dfs(sentence, step + 1)
+            sentence = sentence[:-1]
 
-
+    dfs("", 0)
 
 def main():
     nums = sys.stdin.readline().strip()
