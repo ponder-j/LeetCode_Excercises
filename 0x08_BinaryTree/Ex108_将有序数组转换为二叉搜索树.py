@@ -92,12 +92,17 @@ def serialize_tree(root: Optional[TreeNode]) -> List[Any]:
 
 # Solution
 class Solution:
-    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        if root is None:
-            return None
-        root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
-        return root
+    def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
+        if len(nums) == 1:
+            return TreeNode(val=nums[0])
+        
+        mid = len(nums) // 2
+        root = TreeNode(val=nums[mid])
+        root.left = self.sortedArrayToBST(nums[:mid])
+        if mid + 1 < len(nums):
+            root.right = self.sortedArrayToBST(nums[mid+1:])
 
+        return root
 # 思路总结
 
 # Instantiation
@@ -106,9 +111,9 @@ if __name__ == '__main__':
     sol = Solution()
     
     # 构造测试用例
-    testcase = [4,2,7,1,3,6,9]
-    test_root = build_tree(testcase)
+    testcase = [-10,-3,0,5,9]
+    # test_root = build_tree(testcase)
     
     # 调用方法并打印结果
-    result = sol.invertTree(test_root)
+    result = sol.sortedArrayToBST(testcase)
     print(f"输出结果: {serialize_tree(result)}")

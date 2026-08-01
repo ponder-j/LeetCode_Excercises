@@ -92,11 +92,39 @@ def serialize_tree(root: Optional[TreeNode]) -> List[Any]:
 
 # Solution
 class Solution:
-    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         if root is None:
-            return None
-        root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
-        return root
+            return []
+        queue = []
+        level = 0
+        queue.append([root, level])
+        ans = []
+        ans_ll = []
+        while queue != []:
+            cur = queue[0][0]
+            cur_level = queue[0][1]
+            if cur.left is not None:
+                queue.append([cur.left, cur_level+1])
+            if cur.right is not None:
+                queue.append([cur.right, cur_level+1])
+
+            ans.append([cur.val, cur_level])
+            queue.pop(0)
+
+        level = 0
+        temp = []
+        print(ans)
+        for node in ans:
+            if level == node[1]:
+                temp.append(node[0])
+            else:
+                ans_ll.append(temp)
+                level = node[1]
+                temp = [node[0]]
+
+        ans_ll.append(temp)
+
+        return ans_ll
 
 # 思路总结
 
@@ -106,9 +134,9 @@ if __name__ == '__main__':
     sol = Solution()
     
     # 构造测试用例
-    testcase = [4,2,7,1,3,6,9]
+    testcase = [3,9,20,"null","null",15,7]
     test_root = build_tree(testcase)
     
     # 调用方法并打印结果
-    result = sol.invertTree(test_root)
-    print(f"输出结果: {serialize_tree(result)}")
+    result = sol.levelOrder(test_root)
+    print(f"输出结果: {result}")

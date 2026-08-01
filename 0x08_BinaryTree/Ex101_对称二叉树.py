@@ -92,11 +92,25 @@ def serialize_tree(root: Optional[TreeNode]) -> List[Any]:
 
 # Solution
 class Solution:
-    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
         if root is None:
-            return None
-        root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
-        return root
+            return True
+        left  = root.left
+        right = root.right
+
+        def duichen(root1, root2) -> bool:
+            if (root1 is None) and (root2 is None):
+                return True
+            if (root1 is None) or (root2 is None):
+                return False
+            
+            if root1.val != root2.val:
+                return False
+            if duichen(root1.left, root2.right) and duichen(root1.right, root2.left):
+                return True
+            return False
+
+        return duichen(left, right)
 
 # 思路总结
 
@@ -106,9 +120,9 @@ if __name__ == '__main__':
     sol = Solution()
     
     # 构造测试用例
-    testcase = [4,2,7,1,3,6,9]
+    testcase = [1,2,2,"null",3,"null",3]
     test_root = build_tree(testcase)
     
     # 调用方法并打印结果
-    result = sol.invertTree(test_root)
-    print(f"输出结果: {serialize_tree(result)}")
+    result = sol.isSymmetric(test_root)
+    print(f"输出结果: {result}")

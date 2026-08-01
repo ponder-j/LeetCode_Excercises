@@ -92,11 +92,33 @@ def serialize_tree(root: Optional[TreeNode]) -> List[Any]:
 
 # Solution
 class Solution:
-    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+
+        def max_val(root) -> int:
+            if root.right is None:
+                return 0
+            
+            while root.right is not None:
+                root = root.right
+
+            return root.val
+
+        def min_val(root) -> int:
+            if root.left is None:
+                return 0
+            
+            while root.left is not None:
+                root = root.left
+
+            return root.val
+
         if root is None:
-            return None
-        root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
-        return root
+            return True
+
+        if max_val(root.left) < root.val < min_val(root.right) and self.isValidBST(root.left) and self.isValidBST(root.right):
+            return True
+        else:
+            return False
 
 # 思路总结
 
@@ -106,9 +128,9 @@ if __name__ == '__main__':
     sol = Solution()
     
     # 构造测试用例
-    testcase = [4,2,7,1,3,6,9]
+    testcase = [1,2,3]
     test_root = build_tree(testcase)
     
     # 调用方法并打印结果
-    result = sol.invertTree(test_root)
-    print(f"输出结果: {serialize_tree(result)}")
+    result = sol.isValidBST(test_root)
+    print(f"输出结果: {result}")

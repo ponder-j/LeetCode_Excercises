@@ -92,11 +92,24 @@ def serialize_tree(root: Optional[TreeNode]) -> List[Any]:
 
 # Solution
 class Solution:
-    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        if root is None:
-            return None
-        root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
-        return root
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+        self.max_d = 0
+
+        def depth(root: Optional[TreeNode]) -> int:
+            if root is None:
+                return 0
+
+            left_d = depth(root.left)
+            right_d = depth(root.right)
+
+            self.max_d = max(self.max_d, left_d + right_d)
+
+            return max(left_d, right_d) + 1
+
+        depth(root)
+
+        return self.max_d
+
 
 # 思路总结
 
@@ -106,9 +119,9 @@ if __name__ == '__main__':
     sol = Solution()
     
     # 构造测试用例
-    testcase = [4,2,7,1,3,6,9]
+    testcase = [1,2]
     test_root = build_tree(testcase)
     
     # 调用方法并打印结果
-    result = sol.invertTree(test_root)
-    print(f"输出结果: {serialize_tree(result)}")
+    result = sol.diameterOfBinaryTree(test_root)
+    print(f"输出结果: {result}")
