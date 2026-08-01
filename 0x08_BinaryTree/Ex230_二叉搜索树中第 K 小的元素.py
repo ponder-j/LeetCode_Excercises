@@ -92,46 +92,24 @@ def serialize_tree(root: Optional[TreeNode]) -> List[Any]:
 
 # Solution
 class Solution:
-    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+        # 那tm不就是中序遍历吗？
+        ans_list = []
+        def InorderTraversal(root):
+            if root is None:
+                return
+            if root.left is None and root.right is None:
+                ans_list.append(root.val)
+                return
 
-        def max_val(root) -> int:
-            if root.right is None:
-                return root.val
-            
-            while root.right is not None:
-                root = root.right
+            InorderTraversal(root.left)
+            ans_list.append(root.val)
+            InorderTraversal(root.right)
 
-            return root.val
-
-        def min_val(root) -> int:
-            if root.left is None:
-                return root.val
-            
-            while root.left is not None:
-                root = root.left
-
-            return root.val
-
-        if root is None:
-            return True
-
-        if (root.left is None) and (root.right is None):
-            return True
-        else:
-            if root.left is None:
-                left = float("-inf")
-                right = min_val(root.right)
-            elif root.right is None:
-                left = max_val(root.left)
-                right = float("inf")
-            else:
-                left = max_val(root.left)
-                right = min_val(root.right)
-            
-            if left < root.val < right and self.isValidBST(root.left) and self.isValidBST(root.right):
-                return True
-            else:
-                return False
+        InorderTraversal(root)
+        
+        # print(ans_list)
+        return ans_list[k-1]
 
 # 思路总结
 
@@ -141,9 +119,9 @@ if __name__ == '__main__':
     sol = Solution()
     
     # 构造测试用例
-    testcase = [1,"null",1]
+    testcase = [3,1,4,"null",2]
     test_root = build_tree(testcase)
     
     # 调用方法并打印结果
-    result = sol.isValidBST(test_root)
+    result = sol.kthSmallest(test_root, 1)
     print(f"输出结果: {result}")

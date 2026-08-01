@@ -92,46 +92,8 @@ def serialize_tree(root: Optional[TreeNode]) -> List[Any]:
 
 # Solution
 class Solution:
-    def isValidBST(self, root: Optional[TreeNode]) -> bool:
-
-        def max_val(root) -> int:
-            if root.right is None:
-                return root.val
-            
-            while root.right is not None:
-                root = root.right
-
-            return root.val
-
-        def min_val(root) -> int:
-            if root.left is None:
-                return root.val
-            
-            while root.left is not None:
-                root = root.left
-
-            return root.val
-
-        if root is None:
-            return True
-
-        if (root.left is None) and (root.right is None):
-            return True
-        else:
-            if root.left is None:
-                left = float("-inf")
-                right = min_val(root.right)
-            elif root.right is None:
-                left = max_val(root.left)
-                right = float("inf")
-            else:
-                left = max_val(root.left)
-                right = min_val(root.right)
-            
-            if left < root.val < right and self.isValidBST(root.left) and self.isValidBST(root.right):
-                return True
-            else:
-                return False
+    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+        return [1]
 
 # 思路总结
 
@@ -141,9 +103,9 @@ if __name__ == '__main__':
     sol = Solution()
     
     # 构造测试用例
-    testcase = [1,"null",1]
+    testcase = [1,2,3,"null",5,"null",4]
     test_root = build_tree(testcase)
     
     # 调用方法并打印结果
-    result = sol.isValidBST(test_root)
+    result = sol.rightSideView(test_root)
     print(f"输出结果: {result}")
