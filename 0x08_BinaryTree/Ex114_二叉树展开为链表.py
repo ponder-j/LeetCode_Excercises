@@ -92,43 +92,10 @@ def serialize_tree(root: Optional[TreeNode]) -> List[Any]:
 
 # Solution
 class Solution:
-    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
-        if root is None:
-            return []
-        queue = []
-        level = 0
-        queue.append([root, level])
-        ans = []
-        ans_ll = []
-        while queue != []:
-            cur = queue[0][0]
-            cur_level = queue[0][1]
-            if cur.left is not None:
-                queue.append([cur.left, cur_level+1])
-            if cur.right is not None:
-                queue.append([cur.right, cur_level+1])
-
-            ans.append([cur.val, cur_level])
-            queue.pop(0)
-
-        level = 0
-        temp = []
-        print(ans)
-        for node in ans:
-            if level == node[1]:
-                temp.append(node[0])
-            else:
-                ans_ll.append(temp)
-                level = node[1]
-                temp = [node[0]]
-
-        ans_ll.append(temp)
-
-        ans_rsv = []
-        for level_nodes in ans_ll:
-            ans_rsv.append(level_nodes[-1])
-
-        return ans_rsv
+    def flatten(self, root: Optional[TreeNode]) -> None:
+        """
+        Do not return anything, modify root in-place instead.
+        """
 
 # 思路总结
 
@@ -138,9 +105,9 @@ if __name__ == '__main__':
     sol = Solution()
     
     # 构造测试用例
-    testcase = [1,2,3,4,"null","null","null",5]
+    testcase = [1,2,5,3,4,"null",6]
     test_root = build_tree(testcase)
     
     # 调用方法并打印结果
-    result = sol.rightSideView(test_root)
+    result = sol.flatten(test_root)
     print(f"输出结果: {result}")
