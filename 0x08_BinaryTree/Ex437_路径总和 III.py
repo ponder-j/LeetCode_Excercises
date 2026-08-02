@@ -92,36 +92,7 @@ def serialize_tree(root: Optional[TreeNode]) -> List[Any]:
 
 # Solution
 class Solution:
-    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
-
-        def build_tree(preo, ino) -> Optional[TreeNode]:
-            if preo == []:
-                return None
-            if len(preo) == 1:
-                return TreeNode(preo[0])
-            
-            root_val = preo[0]
-            find_index = ino.index(root_val)
-            n_left  = find_index
-            # n_right = len(ino) - find_index - 1
-            new_ino_left  = ino[:find_index]
-            new_ino_right = ino[find_index+1:]
-            # 不必要的条件判断
-            # if find_index < len(ino)-1:
-            #     new_ino_right = ino[find_index+1:]
-            # else:
-            #     new_ino_right = []
-
-            node  = TreeNode(root_val)
-            left  = build_tree(preo[1:n_left+1], new_ino_left)
-            right = build_tree(preo[n_left+1:], new_ino_right)
-            node.left  = left
-            node.right = right
-
-            return node
-
-        return build_tree(preorder, inorder)
-
+    def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
 
 # 思路总结
 
@@ -131,10 +102,9 @@ if __name__ == '__main__':
     sol = Solution()
     
     # 构造测试用例
-    preorder = [3,9,20,15,7]
-    inorder  = [9,3,15,20,7]
-    # test_root = build_tree(testcase)
+    testcase = [1,2,3]
+    test_root = build_tree(testcase)
     
     # 调用方法并打印结果
-    result = sol.buildTree(preorder, inorder)
-    print(f"输出结果: {serialize_tree(result)}")
+    result = sol.pathSum(test_root, 8)
+    print(f"输出结果: {result}")

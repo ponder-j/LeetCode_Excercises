@@ -91,36 +91,33 @@ def serialize_tree(root: Optional[TreeNode]) -> List[Any]:
     return result
 
 # Solution
+# 优化：传递下标而不是传递列表
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+        index_map = {val:index for index, val in enumerate(inorder)}
 
-        def build_tree(preo, ino) -> Optional[TreeNode]:
-            if preo == []:
+        def build_tree(preo_s, preo_e, ino_s, ino_e) -> Optional[TreeNode]:
+            if preo_s == preo_e:
                 return None
-            if len(preo) == 1:
-                return TreeNode(preo[0])
+            if preo_e - preo_s == 1:
+                return TreeNode(preorder[preo_s])
             
-            root_val = preo[0]
-            find_index = ino.index(root_val)
+            root_val = preorder[preo_s]
+            find_index = index_map[root_val]
             n_left  = find_index
             # n_right = len(ino) - find_index - 1
-            new_ino_left  = ino[:find_index]
-            new_ino_right = ino[find_index+1:]
-            # 不必要的条件判断
-            # if find_index < len(ino)-1:
-            #     new_ino_right = ino[find_index+1:]
-            # else:
-            #     new_ino_right = []
+            new_ino_left  = (ino_s, find_index)
+            new_ino_right = (find_index+1, ino_e)
 
             node  = TreeNode(root_val)
-            left  = build_tree(preo[1:n_left+1], new_ino_left)
-            right = build_tree(preo[n_left+1:], new_ino_right)
+            left  = build_tree(preo_s+1, preo_s+(n_left-ino_s)+1, new_ino_left[0], new_ino_left[1])
+            right = build_tree(preo_s+(n_left-ino_s)+1, preo_e, new_ino_right[0], new_ino_right[1])
             node.left  = left
             node.right = right
 
             return node
 
-        return build_tree(preorder, inorder)
+        return build_tree(0, len(preorder), 0, len(inorder))
 
 
 # 思路总结
