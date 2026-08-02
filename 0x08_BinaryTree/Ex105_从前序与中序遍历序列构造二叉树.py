@@ -92,28 +92,8 @@ def serialize_tree(root: Optional[TreeNode]) -> List[Any]:
 
 # Solution
 class Solution:
-    def flatten(self, root: Optional[TreeNode]) -> None:
-        """
-        Do not return anything, modify root in-place instead.
-        """
-        node_list = []
-        if root is None:
-            return
-
-        def preorderTraversal(node):
-            node_list.append(node)
-            if node.left is not None:
-                preorderTraversal(node.left)
-            if node.right is not None:
-                preorderTraversal(node.right)
-
-        preorderTraversal(root)
-
-        # print(node_list)
-        node_list.append(None)
-        for i in range(len(node_list)-1):
-            node_list[i].left = None
-            node_list[i].right = node_list[i+1]
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+        
 
 # 思路总结
 
@@ -123,9 +103,10 @@ if __name__ == '__main__':
     sol = Solution()
     
     # 构造测试用例
-    testcase = [1,2,5,3,4,"null",6]
-    test_root = build_tree(testcase)
+    preorder = [3,9,20,15,7]
+    inorder  = [9,3,15,20,7]
+    # test_root = build_tree(testcase)
     
     # 调用方法并打印结果
-    result = sol.flatten(test_root)
-    print(f"输出结果: {result}")
+    result = sol.buildTree(preorder, inorder)
+    print(f"输出结果: {serialize_tree(result)}")
