@@ -93,6 +93,7 @@ def serialize_tree(root: Optional[TreeNode]) -> List[Any]:
 # Solution
 class Solution:
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
+        
 
 # 思路总结
 
