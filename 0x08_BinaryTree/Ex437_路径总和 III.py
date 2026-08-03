@@ -93,7 +93,23 @@ def serialize_tree(root: Optional[TreeNode]) -> List[Any]:
 # Solution
 class Solution:
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
-        
+
+        def nodeCheckSum(node, target):
+            if node is None:
+                return 0
+
+            solo = 0
+            if node.val == targetSum:
+                solo = 1
+                print(node.val)
+
+            return solo + self.pathSum(node.left, targetSum - node.val) + self.pathSum(node.right, targetSum - node.val)
+
+        # 对 root 做一次 dfs 遍历节点
+        if root is None:
+            return 0
+
+        return nodeCheckSum(root, targetSum) + self.pathSum(root.left, targetSum) + self.pathSum(root.right, targetSum)
 
 # 思路总结
 
@@ -103,7 +119,7 @@ if __name__ == '__main__':
     sol = Solution()
     
     # 构造测试用例
-    testcase = [1,2,3]
+    testcase = [10,5,-3,3,2,"null",11,3,-2,"null",1]
     test_root = build_tree(testcase)
     
     # 调用方法并打印结果
