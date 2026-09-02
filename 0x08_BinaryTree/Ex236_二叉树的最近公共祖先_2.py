@@ -90,48 +90,41 @@ def serialize_tree(root: Optional[TreeNode]) -> List[Any]:
         
     return result
 
+from collections import defaultdict
+
 # Solution
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        p_route = []
-        q_route = []
-        cur_route = []
-        flag = 0
-
-        def dfs(node):
-            nonlocal flag, p_route, q_route
+        target = root
+        f_node = defaultdict(bool)
+        # dfs(node) 判断 以节点 node 为根的子树是否包含 p 节点或 q 节点
+        def dfs(node) -> bool:
             if node is None:
-                return
-            cur_route.append(node)
-            if node == p:
-                p_route = cur_route.copy()
-                flag += 1
-            if node == q:
-                q_route = cur_route.copy()
-                flag += 1
-            if flag == 2:
-                print(p)
-                return
+                return False
+            
+            # node_status =  (dfs(node.left) and dfs(node.right)) \
+            #             or \
+            #         (node == p or node == q) and (dfs(node.left) or dfs(node.right))
 
-            dfs(node.left)
-            dfs(node.right)
+            if node == p or node == q:
+                f_node[node] = True
+                return True
 
-            cur_route.pop()
-
+            cal_left = dfs(node.left)
+            cal_right = dfs(node.right)
+            f_node[node] = cal_left or cal_right
+            return f_node[node]
+            
         dfs(root)
+        print(f_node)
 
-        # print(p_route)
-        # print(q_route)
-        path = []
-        for i in range(min(len(p_route), len(q_route))):
-            if p_route[i] == q_route[i]:
-                path.append(p_route[i])
-            else:
-                break
-
-        return path[-1]
+        return target
+            
 
 # 思路总结
+# 定义 fx: 节点 x 为根的子树是否包含 p 节点或 q 节点
+# 要找的最近公共祖先：(f_lson && f_rson)  ||  (x == p || x == q) && (f_lson || f_rson)
+# 太巧妙了
 
 # Instantiation
 if __name__ == '__main__':
@@ -141,13 +134,7 @@ if __name__ == '__main__':
     # 构造测试用例
     testcase = [3,5,1,6,2,0,8,"null","null",7,4]
     test_root = build_tree(testcase)
-    if test_root is None:
-        test_root = TreeNode(0)
-    if test_root.left is None:
-        test_root.left = TreeNode(0)
-    if test_root.right is None:
-        test_root.right = TreeNode(0)
     
     # 调用方法并打印结果
-    result = sol.lowestCommonAncestor(root=test_root, p=test_root.left, q=test_root.right)
+    result = sol.lowestCommonAncestor(root=test_root, p=test_root.left, q=test_root.left.right.right)
     print(f"输出结果: {result.val}")
