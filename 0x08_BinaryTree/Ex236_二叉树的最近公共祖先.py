@@ -90,40 +90,12 @@ def serialize_tree(root: Optional[TreeNode]) -> List[Any]:
         
     return result
 
-from collections import defaultdict
-
 # Solution
 class Solution:
-    def pathSum(self, root: Optional[TreeNode], targetSum: int) -> int:
-
-        prefix = defaultdict(int)
-        prefix[0] = 1
-        cur = 0
-        cnt = 0
-
-        def dfs(node, target):
-            nonlocal cur, cnt
-            if node is None:
-                return
-
-            cur += node.val
-            cnt += prefix[cur - target]
-            prefix[cur] += 1
-
-            dfs(node.left, target)
-            dfs(node.right, target)
-
-            prefix[cur] -= 1
-            cur -= node.val
-
-        dfs(root, targetSum)
-        return cnt
-            
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        
 
 # 思路总结
-# 法2: 前缀和思想，减少重复计算。且前缀和字典需要在“同一条路径下”保存，避免影响到“不属于这条路径”的前缀和。
-# prefix 是个哈希表，prefix[val] = 1 / 0 表示是否存在前缀和为 val 的路径。
-# 需要注意的问题：当 targetSum = 0 时，需要保证路径长度不为 0，否则会导致默认的 prefix[0]=1 被算进去；也就是说，cnt += prefix[cur - target];prefix[cur] += 1 这两句的顺序不能颠倒！！！！
 
 # Instantiation
 if __name__ == '__main__':
@@ -131,9 +103,15 @@ if __name__ == '__main__':
     sol = Solution()
     
     # 构造测试用例
-    testcase = [1,-2,-3,1,3,-2,"null",-1]
+    testcase = [3,5,1,6,2,0,8,"null","null",7,4]
     test_root = build_tree(testcase)
+    if test_root is None:
+        test_root = TreeNode(0)
+    if test_root.left is None:
+        test_root.left = TreeNode(0)
+    if test_root.right is None:
+        test_root.right = TreeNode(0)
     
     # 调用方法并打印结果
-    result = sol.pathSum(test_root, 0)
-    print(f"输出结果: {result}")
+    result = sol.lowestCommonAncestor(root=test_root, p=test_root.left, q=test_root.right)
+    print(f"输出结果: {result.val}")
