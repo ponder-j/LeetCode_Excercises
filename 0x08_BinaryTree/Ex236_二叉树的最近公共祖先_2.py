@@ -96,27 +96,25 @@ from collections import defaultdict
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         target = root
-        f_node = defaultdict(bool)
-        # dfs(node) 判断 以节点 node 为根的子树是否包含 p 节点或 q 节点
-        def dfs(node) -> bool:
+        
+        # f(node) 判断 以节点 node 为根的子树是否包含 p 节点或 q 节点
+        def f(node: Optional[TreeNode]) -> bool:
+            nonlocal target
             if node is None:
                 return False
-            
-            # node_status =  (dfs(node.left) and dfs(node.right)) \
-            #             or \
-            #         (node == p or node == q) and (dfs(node.left) or dfs(node.right))
 
-            if node == p or node == q:
-                f_node[node] = True
+            lson = f(node.left)
+            rson = f(node.right)
+
+            node_status =  (lson and rson) or ((node == p or node == q) and (lson or rson))
+
+            if node_status:
+                target = node
                 return True
 
-            cal_left = dfs(node.left)
-            cal_right = dfs(node.right)
-            f_node[node] = cal_left or cal_right
-            return f_node[node]
+            return lson or rson or (node == p) or (node == q)
             
-        dfs(root)
-        print(f_node)
+        f(root)
 
         return target
             
