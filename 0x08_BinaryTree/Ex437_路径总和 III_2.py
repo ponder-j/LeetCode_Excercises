@@ -126,7 +126,7 @@ class Solution:
         return cnt
 
 # 思路总结
-# 法1: 对每个节点进行 dfs 遍历
+# 法2: 前缀和思想，减少重复计算
 
 # Instantiation
 if __name__ == '__main__':
