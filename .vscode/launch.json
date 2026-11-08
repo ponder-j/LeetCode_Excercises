@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Rust：调试当前题目 main",
+      "type": "lldb",
+      "request": "launch",
+      "cargo": {
+        "args": ["build", "--bin", "${fileBasenameNoExtension}"],
+        "cwd": "${workspaceFolder}/rust",
+        "filter": {
+          "name": "${fileBasenameNoExtension}",
+          "kind": "bin"
+        }
+      },
+      "cwd": "${workspaceFolder}/rust",
+      "env": { "RUST_BACKTRACE": "1" },
+      "sourceLanguages": ["rust"]
+    },
+    {
+      "name": "Rust：调试当前题目 tests",
+      "type": "lldb",
+      "request": "launch",
+      "cargo": {
+        "args": ["test", "--no-run", "--bin", "${fileBasenameNoExtension}"],
+        "cwd": "${workspaceFolder}/rust",
+        "filter": {
+          "name": "${fileBasenameNoExtension}",
+          "kind": "bin"
+        }
+      },
+      "args": ["--nocapture", "--test-threads=1"],
+      "cwd": "${workspaceFolder}/rust",
+      "env": { "RUST_BACKTRACE": "1" },
+      "sourceLanguages": ["rust"]
+    }
+  ]
+}
